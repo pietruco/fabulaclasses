@@ -208,7 +208,19 @@ body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,se
 .inf-card-name{font-family:'Cinzel',serif;font-size:13px;color:var(--text);margin-bottom:5px;}
 .inf-card-desc{font-size:14px;color:var(--text2);line-height:1.5;}
 
-/* FEITICOS TABS */
+/* PODERES HEROICOS inline */
+.ph-inline-section { margin-bottom: 40px; }
+.ph-inline-grid { display: flex; flex-direction: column; gap: 12px; }
+.ph-card { border-left: 3px solid rgba(200,168,75,.35) !important; }
+.ph-class-pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: 'Inter', sans-serif; font-size: 10px;
+  padding: 2px 8px; border-radius: 20px;
+  background: rgba(200,168,75,.1); border: 1px solid rgba(200,168,75,.25);
+  color: var(--gold); cursor: pointer; transition: background .15s;
+  white-space: nowrap;
+}
+.ph-class-pill:hover { background: rgba(200,168,75,.2); color: var(--gold2); }
 .feitico-class-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:24px;}
 .feitico-tab{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;border:none;background:none;color:var(--text3);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s,border-color .15s;}
 .feitico-tab:hover{color:var(--text);}

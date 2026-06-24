@@ -243,6 +243,7 @@ function renderClassPage(cls) {
           <p class="section-label">Poderes</p>
           <div class="powers-list">${powers}</div>
           ${subSections}
+          ${renderPoderesHeroicos(cls.id)}
         </div>
         <div class="class-sidebar-col">
           <div class="info-card">
@@ -261,6 +262,7 @@ function renderClassPage(cls) {
 /* ── SECTION RENDERERS ── */
 function renderSection(sec) {
   switch(sec) {
+    case 'poderes-heroicos': return renderPoderesHeroicos();
     case 'dancas': return renderDancas();
     case 'feiticos': return renderFeiticos();
     case 'magissementes': return renderMagissementes();
@@ -283,6 +285,86 @@ function refNavBar(title) {
 
 function tagBadge(tipo) {
   return `<span class="ref-card-tag tag-${tipo}">${tipo}</span>`;
+}
+
+/* PODERES HEROICOS — seção global */
+function renderPoderesHeroicos(filtroClasse) {
+  const todos = PODERES_HEROICOS.filter(p => p.todosPersonagens);
+  const comRequisito = PODERES_HEROICOS.filter(p => !p.todosPersonagens);
+  const filtrados = filtroClasse
+    ? comRequisito.filter(p => p.classes.includes(filtroClasse))
+    : comRequisito;
+
+  const navBar = filtroClasse ? '' : refNavBar('Poderes Heroicos');
+
+  const renderCard = (p) => `
+    <div class="ref-card ph-card">
+      <div class="ref-card-header">
+        <span class="ref-card-name">${p.nome}</span>
+        ${p.todosPersonagens ? `<span class="ref-card-tag tag-suporte">Todos</span>` : ''}
+      </div>
+      <div class="ref-card-meta" style="font-style:italic;color:var(--text3);font-size:13px">${p.requisito}</div>
+      <p class="ref-card-desc">${p.descricao}</p>
+    </div>`;
+
+  if (filtroClasse) {
+    // Inline dentro da página de classe
+    if (!filtrados.length) return '';
+    return `
+      <div class="ph-inline-section">
+        <p class="section-label">Poderes Heroicos Disponíveis</p>
+        <div class="ph-inline-grid">
+          ${filtrados.map(renderCard).join('')}
+        </div>
+      </div>`;
+  }
+
+  // Página completa
+  return `${navBar}
+  <div class="ref-page">
+    <h2 class="ref-title">⭐ Poderes Heroicos</h2>
+    <p class="ref-subtitle">Adquiridos ao dominar uma classe · Cada um pode ser escolhido uma vez (salvo exceções)</p>
+
+    <p class="section-label">Disponíveis a Todos os Personagens</p>
+    <div class="ref-grid" style="margin-bottom:40px">
+      ${todos.map(renderCard).join('')}
+    </div>
+
+    <p class="section-label">Com Requisito de Domínio de Classe</p>
+    <div class="ref-filter-bar">
+      <button class="ref-filter-btn active" onclick="filterPHCards(this,'all')">Todos</button>
+      ${[...new Set(PODERES_HEROICOS.filter(p=>!p.todosPersonagens).flatMap(p=>p.classes))].sort().map(cls => {
+        const c = CLASSES.find(x => x.id === cls);
+        return c ? `<button class="ref-filter-btn" data-cls="${cls}" onclick="filterPHCards(this,'${cls}')">${c.emoji} ${c.nome}</button>` : '';
+      }).join('')}
+    </div>
+    <div class="ref-grid" id="phGrid">
+      ${comRequisito.map(p => `
+        <div class="ref-card ph-card" data-classes="${p.classes.join(',')}">
+          <div class="ref-card-header">
+            <span class="ref-card-name">${p.nome}</span>
+          </div>
+          <div class="ref-card-meta" style="margin-bottom:6px">
+            ${p.classes.map(cls => {
+              const c = CLASSES.find(x=>x.id===cls);
+              return c ? `<span class="ph-class-pill" onclick="handleNavClick('${cls}')" title="Ver ${c.nome}">${c.emoji} ${c.nome}</span>` : '';
+            }).join('')}
+          </div>
+          <div class="ref-card-meta" style="font-style:italic;color:var(--text3);font-size:13px">${p.requisito}</div>
+          <p class="ref-card-desc">${p.descricao}</p>
+        </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function filterPHCards(btn, cls) {
+  document.querySelectorAll('.ref-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#phGrid .ph-card').forEach(card => {
+    if (cls === 'all') { card.classList.remove('hidden'); return; }
+    const classes = card.dataset.classes ? card.dataset.classes.split(',') : [];
+    card.classList.toggle('hidden', !classes.includes(cls));
+  });
 }
 
 /* DANÇAS */
