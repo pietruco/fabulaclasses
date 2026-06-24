@@ -197,7 +197,7 @@ function renderClassPage(cls) {
     <div class="power-card">
       <div class="power-header">
         <span class="power-name">${p.nome}</span>
-        ${p.custo && p.custo !== '—' ? `<span class="power-cost">Nível ${p.custo}</span>` : ''}
+        ${p.custo && p.custo !== '—' ? `<span class="power-cost">${p.custo}</span>` : ''}
       </div>
       <p class="power-desc">${p.descricao}</p>
       ${linkBtn}
