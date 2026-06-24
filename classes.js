@@ -44,6 +44,15 @@ const CLASSES = [
     ],
     subSecoes: [
       {
+        titulo: "Regras de Arcano",
+        itens: [
+          { nome: "Fundir-se a um Arcano", descricao: "Ao invocar um Arcano, você ganha seus benefícios de fundição, que duram até esse Arcano ser dispensado. Não é possível invocar um Arcano enquanto já estiver fundido a outro; você deve dispensar o Arcano atual para fundir novamente." },
+          { nome: "Dispensar um Arcano", descricao: "Um Arcano pode ser dispensado de diversas formas: quando a cena atual acaba (todos são dispensados automaticamente); quando você morre ou fica inconsciente; quando você sai de cena; ou voluntariamente sem gastar uma ação (em um conflito, só antes ou depois de agir no seu turno)." },
+          { nome: "Efeitos de Dispensar", descricao: "A maioria dos Arcanos tem um poderoso efeito de dispensar, ativado quando você o dispensa voluntariamente. Se dispensado por qualquer outro motivo, o efeito não é acionado. No 20° nível ou acima, efeitos de dispensar que causam dano aumentam em +10. No 40° nível ou acima, esse dano adicional aumenta para +20. Você também pode ignorar o efeito de dispensar se não quiser usá-lo." },
+          { nome: "Domínios", descricao: "Cada Arcano é associado a alguns conceitos-chave ou domínios. O mestre deve usá-los para estabelecer as provações que envolvem vincular-se ao Arcano e para definir quais rituais são realizados com o poder Arcanismo Ritualista." }
+        ]
+      },
+      {
         titulo: "Os Arcanos",
         itens: [
           { nome: "Arcano da Espada", descricao: "Domínios: conquista, heroísmo, liderança. FUNDIR: Seus ataques causam 5 de dano adicional e todo dano não tem tipo (não afetado por Afinidades). Ao fazer um ataque, pode conceder a propriedade multi a qualquer quantidade de alvos — o Arcano é dispensado automaticamente após o ataque." },
@@ -150,6 +159,29 @@ const CLASSES = [
       { nome: "Dobro ou Nada", custo: "—", descricao: "Antes de fazer um teste de Precisão, Magia ofensivo, ou teste para afetar um relógio: declare dobro ou nada. Sucesso crítico dobra o dano/seções. Qualquer outro resultado é falha." },
       { nome: "Mulligan", custo: "★5", descricao: "No final do seu turno em um conflito, descarte 【NP】 cartas da mão e compre a mesma quantidade do baralho." }
     ],
+    subSecoes: [
+      {
+        titulo: "Gerenciando o Baralho",
+        itens: [
+          { nome: "Composição do Baralho", descricao: "Seu baralho deve ter exatamente 30 cartas: 2 curingas e 28 cartas divididas em 4 naipes. Associe cada naipe a um tipo de dano diferente: ar, fogo, gelo e terra. Cada naipe é composto por 7 cartas com valores de 1 a 7. O mais fácil é usar um baralho de pôquer (removendo cartas de corte e de número 8 a 10). Naipes recomendados: ar (ouros), fogo (copas), gelo (espadas) e terra (paus)." },
+          { nome: "Início do Conflito", descricao: "No início do conflito, embaralhe as 30 cartas e coloque-as à sua frente com face para baixo. Então compre 5 cartas para formar sua mão inicial. Se precisar comprar cartas e não houver o suficiente, compre o máximo possível, embaralhe a pilha de descarte e continue comprando." },
+          { nome: "Mão e Descarte", descricao: "Ao comprar cartas do baralho, elas vão para a sua mão — em geral, apenas você pode vê-la. Ao descartar cartas da mão, coloque-as com face para cima na pilha de descarte na ordem que preferir. A ordem das cartas na pilha de descarte não pode ser modificada. Ao final de cada conflito, embaralhe as 30 cartas de volta ao baralho." },
+          { nome: "Usando um Conjunto", descricao: "Para gerar determinado efeito, você deve cumprir os requisitos exatos de um conjunto. Ao usar um conjunto com curingas, escolha o naipe e o valor deles (de 1 a 7). Se um conjunto cumprir requisitos de dois ou mais efeitos, use apenas um deles." }
+        ]
+      },
+      {
+        titulo: "Efeitos de Conjunto",
+        itens: [
+          { nome: "Par Mágico", descricao: "Requisito: 2 cartas do mesmo valor. Faça um ataque livre com uma arma equipada. Se causar dano, escolha um naipe entre os usados; todo dano causado pelo ataque se torna do tipo correspondente ao naipe." },
+          { nome: "Encrenca em Dobro", descricao: "Requisito: 2 cartas do mesmo valor + 2 cartas do mesmo valor. Você causa dano igual a (10 + o valor mais alto entre as cartas) em 1 ou 2 inimigos que você veja. Escolha o tipo de dano entre os naipes usados. No 20°+ nível, +10 de dano; no 40°+ nível, +20." },
+          { nome: "Trinca de Suporte", descricao: "Requisito: 3 cartas do mesmo valor. Você e todos os aliados presentes na cena recuperam PV e PM igual a (3 × o valor total das cartas usadas)." },
+          { nome: "Full Status", descricao: "Requisito: 3 cartas do mesmo valor + 2 cartas do mesmo valor. Escolha duas condições entre abalado, atordoado, fraco e lento. Se o valor mais alto for par: você e aliados se recuperam das condições escolhidas. Se ímpar: cada inimigo presente na cena sofre as condições escolhidas." },
+          { nome: "Grande Prêmio", descricao: "Requisito: 4 cartas do mesmo valor e nenhum curinga. Você e todos os aliados presentes na cena recuperam 777 PV e 777 PM. PJs que tenham se rendido e ainda estiverem presentes recuperam a consciência imediatamente." },
+          { nome: "Flush Ofuscante", descricao: "Requisito: 4 cartas com valores em sequência. Você causa dano igual a (15 + o valor total das cartas) em cada inimigo presente na cena. O tipo de dano é luz se o valor mais alto for par; ou trevas se for ímpar. No 20°+ nível, +10; no 40°+ nível, +20." },
+          { nome: "Flush Mágico", descricao: "Requisito: 4 cartas do mesmo naipe com valores em sequência. Você causa dano igual a (25 + o valor total das cartas) em cada inimigo presente na cena. O tipo de dano é correspondente ao naipe usado. No 20°+ nível, +10; no 40°+ nível, +20." }
+        ]
+      }
+    ],
     cor: "#6b1a6b",
     emoji: "🃏"
   },
@@ -173,7 +205,28 @@ const CLASSES = [
       { nome: "Magitransformação", custo: "★3", descricao: "Sempre que adquirir este poder, crie uma nova forma mágica. Use uma ação e gaste 25 PM para assumir uma forma mágica que possui." },
       { nome: "Transformação Aprimorada", custo: "★3", descricao: "Sempre que adquirir este poder, escolha a arma ou armadura de uma de suas formas mágicas e modifique-a como se fosse um item raro (valor ≤ 30 × seu nível em zênites). Em cenas de descanso, gaste 2 PI por item para aplicar novas características." }
     ],
-    cor: "#c41a8a",
+    subSecoes: [
+      {
+        titulo: "Forma Mágica",
+        itens: [
+          { nome: "Regras Gerais", descricao: "Todo cavaleiro mágico tem uma relíquia mágica que lhe concede transformações com efeitos especiais. Cada transformação é uma forma mágica. Após usar Magitransformação, os efeitos duram até o fim da cena, mas também se encerram se você morrer ou ficar inconsciente. Você pode encerrar os efeitos a qualquer momento (em conflito, só no seu turno)." },
+          { nome: "Criando uma Forma Mágica", descricao: "Para criar uma forma mágica, combine uma motivação, uma aura e dois focos. Após fazer essa escolha, ela só pode ser mudada por poderes específicos. Você pode combinar aspectos entre focos — por exemplo, focos ardente e congelante para usar um arco curto que causa dano de gelo." },
+          { nome: "Motivação e Aura", descricao: "Motivação Afeto: afeta cada aliado presente na cena com o qual você tem um Laço. Motivação Raiva: afeta cada inimigo presente na cena com o qual você tem um Laço. Aura Fraqueza: aliados ficam imunes a fraco / inimigos ficam fracos. Aura Coragem: aliados ficam imunes a abalado / inimigos ficam abalados. Aura Tolice: aliados ficam imunes a atordoado / inimigos ficam atordoados. Aura Zelo: aliados ficam imunes a lento / inimigos ficam lentos." }
+        ]
+      },
+      {
+        titulo: "Focos de Forma Mágica",
+        itens: [
+          { nome: "Foco Ardente", descricao: "Aparência sugerida: armadura completa, vestido curto; tons de vermelho. Escolha uma arma de fogo ou arco básico e uma armadura básica. Ao usar Magitransformação, os itens escolhidos substituem qualquer arma e armadura equipada. Todo dano causado por seus ataques torna-se de fogo." },
+          { nome: "Foco Brilhante", descricao: "Aparência sugerida: peitoral, terno, vestido longo; tons de amarelo. Escolha uma espada básica e uma armadura marcial básica. Ao usar Magitransformação, os itens escolhidos substituem qualquer arma e armadura equipada. Todo dano causado por seus ataques torna-se de luz." },
+          { nome: "Foco Celeste", descricao: "Aparência sugerida: armadura leve, toga e auréola, asas; tons de verde. Escolha uma arma arcana básica e uma armadura básica. Ao usar Magitransformação, os itens escolhidos substituem qualquer arma e armadura equipada. Todo dano causado por seus ataques torna-se de ar." },
+          { nome: "Foco Congelante", descricao: "Aparência sugerida: gibão de peles, casaco, cachecol; tons de azul. Escolha uma arma de luta ou arremesso básica e uma armadura básica. Ao usar Magitransformação, os itens escolhidos substituem qualquer arma e armadura equipada. Todo dano causado por seus ataques torna-se de gelo." },
+          { nome: "Foco Eletrizante", descricao: "Aparência sugerida: armadura de couro, óculos, gravata; tons de laranja. Escolha uma lança básica e uma armadura marcial básica. Ao usar Magitransformação, os itens escolhidos substituem qualquer arma e armadura equipada. Todo dano causado por seus ataques torna-se de raio." },
+          { nome: "Foco Rochoso", descricao: "Aparência sugerida: loriga, turbante, pés descalços; tons de marrom. Escolha uma arma pesada ou malho básico e uma armadura marcial básica. Ao usar Magitransformação, os itens escolhidos substituem qualquer arma e armadura equipada. Todo dano causado por seus ataques torna-se de terra." },
+          { nome: "Foco Sombrio", descricao: "Aparência sugerida: armadura leve, máscara, capuz; tons de roxo. Escolha uma adaga básica e uma armadura marcial básica. Ao usar Magitransformação, os itens escolhidos substituem qualquer arma e armadura equipada. Todo dano causado por seus ataques torna-se de trevas." }
+        ]
+      }
+    ],
     emoji: "✨"
   },
   {
@@ -311,7 +364,29 @@ const CLASSES = [
       { nome: "Navegador", custo: "—", descricao: "Comunique-se telepaticamente com aliados conscientes a até 1 dia de viagem. Você pode fazer rituais de ritualismo, e pode usar ritualismo para transportar criaturas dentro/fora da rede de almas e rastrear entidades." },
       { nome: "Psicocinese", custo: "—", descricao: "Quando faz um teste de Precisão, pode substituir um dos dados de atributo por Vontade. Além disso, seus ataques corpo a corpo com espadas ou armas arcanas podem atingir criaturas voadoras." }
     ],
-    cor: "#8a1a6b",
+    subSecoes: [
+      {
+        titulo: "Relógio Mental e Dons",
+        itens: [
+          { nome: "Usando um Dom", descricao: "Dons só podem ser usados em reação a eventos específicos. Quando o evento acontece, você pode gastar PM igual a (5 × número de seções preenchidas no Relógio Mental) — mínimo de 5 PM — para aplicar os efeitos do dom. Você só pode usar um único dom por evento. No 20°+ nível, quantidades recuperadas ou perdidas aumentam em 10; no 40°+ nível, aumentam em 20." },
+          { nome: "Relógio Mental", descricao: "Ao adquirir Dons Psíquicos, você recebe um Relógio Mental com 4 seções, que começa vazio em cada cena. Após usar um de seus dons, preencha 1 seção (após resolver os efeitos do dom). Seções só podem ser apagadas pelo poder heroico Descarga de Ondas Mentais ou por efeitos que expressamente influenciem o Relógio Mental." }
+        ]
+      },
+      {
+        titulo: "Lista de Dons",
+        itens: [
+          { nome: "Atmocinese", descricao: "Evento: quando você causar dano. Este dano torna-se de ar ou raio e sua fonte causa (2 + número de seções preenchidas no Relógio Mental) pontos de dano adicional." },
+          { nome: "Clarividência", descricao: "Evento: quando um NPC se tornar seu foco ou você criar um Laço com um NPC. Faça uma única pergunta sobre este NPC para o mestre; ela deve ser respondida com informações verdadeiras. Este dom só pode ser usado uma vez para cada NPC." },
+          { nome: "Escudo Psíquico", descricao: "Evento: depois que um inimigo que você possa ver fizer um teste de Precisão ou Magia. Para esse teste, você pode considerar sua Def. e Def.M como sendo iguais a (seu dado de Vontade atual + (2 × seções preenchidas no Relógio Mental)). Se seus valores atuais forem melhores, você ainda pode usá-los." },
+          { nome: "Fotocinese", descricao: "Evento: quando você causar dano. Este dano torna-se de trevas ou luz e sua fonte causa (2 + seções preenchidas no Relógio Mental) pontos de dano adicional." },
+          { nome: "Gravitocinese", descricao: "Evento: quando você causar dano. Este dano torna-se de terra ou físico e causa (2 + seções preenchidas no Relógio Mental) pontos de dano adicional. Se causar dano a criaturas voadoras, estas são forçadas a aterrissar imediatamente." },
+          { nome: "Presença Reconfortante", descricao: "Evento: após você dar cobertura a um aliado com a ação Guarda. Este aliado recupera PM igual a (10 + (5 × seções preenchidas no Relógio Mental)). Se for seu foco, o alvo se recupera de uma única condição à sua escolha entre abalado, atordoado e enfurecido." },
+          { nome: "Retaliação Psíquica", descricao: "Evento: depois que um inimigo vencer um teste oposto contra você ou fizer você perder PV. Este inimigo perde PM igual a (5 + (5 × seções preenchidas no Relógio Mental)). Depois, este inimigo fica abalado ou atordoado (à sua escolha)." },
+          { nome: "Termocinese", descricao: "Evento: quando você causar dano. Este dano torna-se de fogo ou gelo e sua fonte causa (2 + seções preenchidas no Relógio Mental) pontos de dano adicional." },
+          { nome: "Transferência de Vida", descricao: "Evento: quando faz um ou mais inimigos perderem PV. Escolha entre você ou um aliado que seja seu foco: se a criatura escolhida estiver em crise, ela recupera PV igual a (5 + (5 × seções preenchidas no Relógio Mental))." }
+        ]
+      }
+    ],
     emoji: "🧠"
   },
   {
@@ -426,7 +501,32 @@ const CLASSES = [
       { nome: "Garfo e Faca", custo: "—", descricao: "Quando usa Culinária para fazer um ataque livre com apenas 2 ingredientes, o ataque pode causar dano normalmente (RA = 0 para o dano)." },
       { nome: "Sal e Pimenta", custo: "—", descricao: "Ao preparar uma iguaria, gaste 2 PI: mude o sabor de um ingrediente para outro sabor à sua escolha." }
     ],
-    cor: "#c47a3a",
+    subSecoes: [
+      {
+        titulo: "Ingredientes e Iguarias",
+        itens: [
+          { nome: "Recebendo Ingredientes", descricao: "No geral, você recebe ingredientes através de Culinária e Cozinheiro Viajante. Ao obter um ingrediente, role um d6 para determinar seu sabor: 1. Amargo · 2. Salgado · 3. Azedo · 4. Doce · 5. Umami · 6. Sua escolha. Você pode comprar ingredientes em feiras, lojas ou com mercadores: 10 zênites para sabor aleatório ou 20 zênites para sabor à sua escolha." },
+          { nome: "Sabores e Iguarias", descricao: "Ao usar Culinária, você combina dois ou três ingredientes para gerar uma iguaria. Cada combinação diferente de dois sabores (mesmo que seja o mesmo sabor duas vezes) acrescenta um efeito à iguaria. Combinando dois sabores que nunca combinou antes, determine o efeito rolando um d12 na tabela de Efeitos de Iguaria e registre na sua ficha de receitas — essa combinação sempre gerará esse exato efeito. Duas combinações não podem ter efeitos idênticos." }
+        ]
+      },
+      {
+        titulo: "Efeitos de Iguaria (d12)",
+        itens: [
+          { nome: "1", descricao: "Cada alvo desta iguaria se recupera de uma condição (escolha: atordoado, furioso, envenenado, abalado, lento ou fraco)." },
+          { nome: "2", descricao: "Cada alvo desta iguaria fica com uma condição (escolha: atordoado, furioso, envenenado, abalado, lento ou fraco)." },
+          { nome: "3", descricao: "Cada alvo desta iguaria recupera 40 PV. Se estiver no 30°+ nível, essa quantidade aumenta para 50." },
+          { nome: "4", descricao: "Cada alvo desta iguaria recupera 40 PM. Se estiver no 30°+ nível, essa quantidade aumenta para 50." },
+          { nome: "5", descricao: "Esta iguaria causa 20 pontos de dano de (escolha: fogo, gelo, raio, terra ou veneno) a cada alvo. Se estiver no 30°+ nível, esse dano aumenta para 30." },
+          { nome: "6", descricao: "Até o fim do seu próximo turno, cada fonte de dano de (escolha: fogo, gelo, raio, terra ou veneno) causa 5 pontos de dano adicional em cada alvo desta iguaria." },
+          { nome: "7", descricao: "Cada alvo desta iguaria é impedido de fazer a ação Guarda no próximo turno dele." },
+          { nome: "8", descricao: "Cada alvo desta iguaria é impedido de fazer a ação Feitiço no próximo turno dele." },
+          { nome: "9", descricao: "Cada alvo desta iguaria é impedido de fazer a ação Poder no próximo turno dele." },
+          { nome: "10", descricao: "Até o fim do seu próximo turno, cada alvo desta iguaria torna-se Resistente a dano de (escolha: fogo, gelo, raio, terra ou veneno)." },
+          { nome: "11", descricao: "Cada alvo desta iguaria considera seu dado de (escolha: Destreza, Astúcia, Vigor ou Vontade) como um passo maior (máximo de d12) até o final do próximo turno." },
+          { nome: "12", descricao: "No próximo turno de cada alvo desta iguaria, todo dano causado por eles torna-se de (escolha: fogo, gelo, raio, terra ou veneno) e esse tipo não pode ser mudado." }
+        ]
+      }
+    ],
     emoji: "🍴"
   },
   {
@@ -495,7 +595,24 @@ const CLASSES = [
       { nome: "Item Emergencial", custo: "—", descricao: "Uma vez por cena de conflito, quando estiver em crise, pode fazer mais uma ação no seu turno — mas deve ser a ação Inventário." },
       { nome: "Visionário", custo: "★5", descricao: "Quando trabalha em um projeto, até 【NP × 100】 zênites do custo de material são pagos automaticamente. Além disso, gera mais 【NP】 de progresso por dia. Se vários personagens com este poder trabalharem no mesmo projeto, os efeitos são cumulativos." }
     ],
-    cor: "#4a6b1a",
+    subSecoes: [
+      {
+        titulo: "Alquimia",
+        itens: [
+          { nome: "Como funciona", descricao: "Outros nomes: Química, Bombas, Mutações. Você faz a ação Inventário para criar rapidamente uma poção com efeitos imprevisíveis. Escolha um tipo de mistura entre os que você desbloqueou e gaste os PI necessários: Básica (3 PI) — role 2d20, atribua um para alvo e um para efeito. Avançada (4 PI) — role 3d20. Superior (5 PI) — role 4d20. Descarte os dados não atribuídos." },
+          { nome: "Tabela de Alvo", descricao: "1–6: você ou um aliado que possa ver. 7–11: um inimigo que você possa ver. 12–16: você e todos os aliados presentes na cena. 17–20: todos os inimigos presentes na cena." },
+          { nome: "Tabela de Efeito", descricao: "Qualquer: sofre 20 de dano de veneno. Qualquer: recupera 30 PV. 1: dados de Des e Vig um passo maior até fim do próximo turno. 2: igual ao 1, mas Ast e Von. 3: 20 de dano de ar (30 no 20°+, 40 no 40°+). 4: igual ao 3 com raio. 5: igual ao 3 com trevas. 6: igual ao 3 com terra. 7: igual ao 3 com fogo. 8: igual ao 3 com gelo. 9: Resistência a ar e fogo até fim da cena. 10: igual ao 9 com gelo e raio. 11: igual ao 9 com terra e trevas. 12: fica enfurecida. 13: fica envenenada. 14: fica abalada, atordoada, lenta e fraca. 15: se recupera de todas as condições. 16–17: recupera 50 PV e 50 PM. 18: recupera 100 PV. 19: recupera 100 PM. 20: recupera 100 PV e 100 PM." }
+        ]
+      },
+      {
+        titulo: "Tecnomagia",
+        itens: [
+          { nome: "Sobreposição Tecnomágica (básica)", descricao: "Gaste uma ação e 10 PM: faça um teste oposto 【AST + AST】 contra um construto de patente soldado que você possa ver. Em um sucesso, você assume o controle da criatura até o fim da cena. Só pode controlar um construto por vez. O construto é libertado se for ferido por você ou seus aliados." },
+          { nome: "Magicanhão (avançada)", descricao: "Faça a ação Inventário e gaste 3 PI para criar um magicanhão. Escolha o tipo de dano que ele causa (ar, físico, fogo, gelo, raio ou terra). Um magicanhão se desmonta caso você crie um novo. Estatísticas: Precisão 【DES + AST】+1, Dano 【RA + 10】, duas mãos, à distância." },
+          { nome: "Magisferas (superior)", descricao: "Você cria três protótipos de magisfera, cada um replicando um feitiço escolhido das listas de Elementalista, Entropista ou Espiritualista. No 20° nível, cria mais dois protótipos; no 40° nível, mais dois. Faça a ação Inventário e gaste 2 PI para criar uma magisfera e lançar imediatamente o feitiço correspondente (seguindo as regras normais, incluindo PM e testes de Magia). A magisfera é destruída ao ser usada." }
+        ]
+      }
+    ],
     emoji: "⚙️"
   },
   {
@@ -725,7 +842,19 @@ const CLASSES = [
       { nome: "Pulso Firme", custo: "—", descricao: "Ao fazer um teste de Precisão com um módulo de arma, pode substituir um de seus atributos por Vigor." },
       { nome: "Veículo Pessoal", custo: "★5", descricao: "Ao adquirir este poder, você recebe um veículo pessoal com uma estrutura à sua escolha (Montaria, Exoesqueleto ou Mecha) e três módulos diferentes. Ao adquirir novamente, escolha dois módulos adicionais." }
     ],
-    cor: "#1a3a6b",
+    subSecoes: [
+      {
+        titulo: "Regras do Veículo Pessoal",
+        itens: [
+          { nome: "Estruturas", descricao: "Montaria: para animais de montaria, motos, caças espaciais pequenos, skates voadores e similares. Exoesqueleto: para armaduras energizadas e membros mecânicos. Mecha: para grandes robôs de combate pilotados por dentro. A estrutura é escolhida ao obter o poder e permanece inalterada pelo resto do jogo." },
+          { nome: "Módulos", descricao: "O número máximo de módulos ativos é (3 + NP do piloto em Veículo Pessoal). O piloto pode redistribuir módulos ativos e inativos livremente fora de conflitos. Módulos podem ser de arma, armadura ou suporte. Apenas um módulo de suporte com o mesmo nome pode estar ativo ao mesmo tempo." },
+          { nome: "Entrando e Saindo", descricao: "Entrar no veículo pessoal num conflito requer a ação Objetivo. Se o veículo estiver disponível no início do conflito, os PJs podem entrar imediatamente antes do teste de Iniciativa. Deixar o veículo não exige ação, mas em um conflito só pode ser feito durante o seu turno." },
+          { nome: "Módulos de Armadura", descricao: "Enquanto pilotar com um módulo de armadura ativo, o piloto não tem acesso ao seu espaço de armadura — ele é ocupado pelo módulo. Módulos marciais definem a Def. e Def.M do piloto com valores fixos (bônus de escudos ainda se aplicam). O piloto pode ativar esses módulos mesmo sem poder equipar armaduras marciais." },
+          { nome: "Módulos de Arma", descricao: "Enquanto pilotar com módulos de arma ativos, o piloto não tem acesso aos seus espaços de mão. Cada módulo de arma conta como uma arma de uma mão, não-marcial. Ao configurar, declare qual ocupará a mão dominante e qual a secundária. Alguns módulos são volumosos e impedem outros módulos de arma (incluindo Escudo) no mesmo veículo." },
+          { nome: "Dano e Conserto", descricao: "O veículo pessoal é tratado como uma extensão do PJ e não tem atributos separados. Pode ser danificado como consequência narrativa da rendição do piloto, mas não pode ser destruído a menos que o jogador concorde. Consertar um veículo danificado custa (100 × NP do Piloto em Veículo Pessoal) zênites." }
+        ]
+      }
+    ],
     emoji: "🚀"
   },
   {
