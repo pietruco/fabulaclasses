@@ -611,8 +611,50 @@ const CLASSES = [
           { nome: "Magicanhão (avançada)", descricao: "Faça a ação Inventário e gaste 3 PI para criar um magicanhão. Escolha o tipo de dano que ele causa (ar, físico, fogo, gelo, raio ou terra). Um magicanhão se desmonta caso você crie um novo. Estatísticas: Precisão 【DES + AST】+1, Dano 【RA + 10】, duas mãos, à distância." },
           { nome: "Magisferas (superior)", descricao: "Você cria três protótipos de magisfera, cada um replicando um feitiço escolhido das listas de Elementalista, Entropista ou Espiritualista. No 20° nível, cria mais dois protótipos; no 40° nível, mais dois. Faça a ação Inventário e gaste 2 PI para criar uma magisfera e lançar imediatamente o feitiço correspondente (seguindo as regras normais, incluindo PM e testes de Magia). A magisfera é destruída ao ser usada." }
         ]
+      },
+      {
+        titulo: "Projetos — Como Funciona",
+        itens: [
+          { nome: "1 · Descreva a invenção", descricao: "Descreva os efeitos da sua invenção, como ela é operada, que tipo de energia usa e os benefícios específicos que ela oferece. O mestre tem a palavra final sobre a possibilidade de criar a invenção nas circunstâncias atuais." },
+          { nome: "2 · Invenções complexas", descricao: "Se uma invenção for muito complexa (ex.: uma motocicleta tecnomágica com canhão), o mestre pode dividi-la em dois ou mais projetos distintos, cada um com seu próprio processo de desenvolvimento." },
+          { nome: "3 · Custo em materiais", descricao: "Ao consultar as tabelas de Potência, Área e Uso, o mestre determina o custo total em materiais a ser pago imediatamente. Para invenções de potência média ou maior, o mestre também descreve um ingrediente ou material especial necessário — esse item não pode ser comprado e obtê-lo deve ser o foco de uma ou duas sessões." },
+          { nome: "4 · Defeito terrível (opcional)", descricao: "Você pode negociar um defeito terrível com o mestre — talvez a invenção precise ser recarregada regularmente, ou seja pesada, barulhenta ou de pouca confiança. Esse defeito reduz em 25% o custo do projeto." },
+          { nome: "5 · Progresso", descricao: "Para concluir o projeto, você precisa acumular progresso igual a um centésimo do custo material em zênites (mínimo de 1). No final de cada dia: +1 progresso para cada PJ que trabalhou no projeto; +1 progresso extra para cada PJ com um ou mais níveis de Inventor que trabalhou. Cada ajudante contratado (custo: metade do custo total do projeto) gera +1 progresso adicional por dia." },
+          { nome: "6 · Conclusão", descricao: "Após alcançar o número de progressos necessários, a invenção é criada! Se gerar mais progressos em um dia do que o necessário, você pode tê-la pronta em algumas horas. Você pode também usar materiais preciosos obtidos em aventuras para pagar o custo do projeto (exceto o ingrediente especial exigido pela potência)." }
+        ]
+      },
+      {
+        titulo: "Projetos — Tabelas de Custo",
+        itens: [
+          { nome: "Potência: Menor (100z)", descricao: "A invenção pode: iluminar, transportar pessoas ou carga por terra ou água, obter uma pequena proteção. Dano/cura: indisponível. Proteção: uma Resistência (somente consumíveis)." },
+          { nome: "Potência: Média (200z)", descricao: "A invenção pode: viajar submersa, conter um feitiço, emitir sons ou fala, fazer uma operação específica no lugar do inventor, fornecer energia a curto prazo. Dano/cura: Fraco. Proteção: duas Resistências." },
+          { nome: "Potência: Maior (400z)", descricao: "A invenção pode: voar, alterar a natureza de uma área por pouco tempo, cancelar efeitos de um feitiço, ter inteligência rudimentar, lutar junto ao inventor, fornecer energia a longo prazo, capturar ou imobilizar o alvo. Dano/cura: Forte. Proteção: uma Imunidade ou duas Resistências." },
+          { nome: "Potência: Extrema (800z)", descricao: "A invenção pode: alterar a natureza de uma área por um longo período, conter o poder de um demônio, evitar uma catástrofe, ter inteligência e personalidade completas. Dano/cura: Intenso. Proteção: duas Imunidades ou três Resistências." },
+          { nome: "Área: Individual (×1)", descricao: "A invenção afeta: uma criatura de tamanho humano, uma porta, uma árvore, uma arma." },
+          { nome: "Área: Pequena (×2)", descricao: "A invenção afeta: um grupo de criaturas de tamanho humano, uma criatura grande, uma pequena clareira, um vagão de trem, uma cabana." },
+          { nome: "Área: Grande (×3)", descricao: "A invenção afeta: uma multidão, uma pequena floresta, uma aeronave ou galeão, um salão de castelo, uma casa, uma criatura gigante." },
+          { nome: "Área: Enorme (×4)", descricao: "A invenção afeta: uma fortaleza, um lago, um cume de montanha, uma aldeia, um quarteirão." },
+          { nome: "Uso: Consumível (×1)", descricao: "Após ativada, a invenção não pode ser usada outra vez, a menos que o criador faça uma cópia dela (o que exige um novo projeto)." },
+          { nome: "Uso: Permanente (×5)", descricao: "Após ativada, a invenção fica disponível para vários usos e em várias situações diferentes." },
+          { nome: "Dano por Nível (Fraco / Forte / Intenso)", descricao: "Nível 5+: 10 / 30 / 40. Nível 20+: 20 / 40 / 60. Nível 40+: 30 / 50 / 80. Evite criar invenções que concedam Imunidade a dano físico. Se o projeto tem efeitos mistos (ex.: Resistência e dano ao mesmo tempo), divida em projetos separados." }
+        ]
+      },
+      {
+        titulo: "Projetos — Exemplos",
+        itens: [
+          { nome: "A 'Descoberta' (Maior · Grande · Permanente)", descricao: "Custo: 6.000z · Progresso: 60 · Defeito: nenhum. Uma grande aeronave capaz de transportar até cinquenta pessoas. Ela não oferece poder de fogo ou proteção adicionais — armamentos e barreiras seriam projetos distintos e acopláveis à estrutura." },
+          { nome: "Metralhagolem (Maior · Individual · Permanente)", descricao: "Custo: 1.500z · Progresso: 15 · Defeito: sim. Uma arma flutuante e semi-inteligente que age após o turno do criador em conflitos, causando dano físico fraco a um alvo. Defeito: é extremamente barulhenta — inimigos podem gastar uma oportunidade para desativá-la até o fim da cena." },
+          { nome: "Botas Magnéticas (Média · Individual · Permanente)", descricao: "Custo: 1.000z · Progresso: 10 · Defeito: nenhum. Um par de botas que permite ao usuário andar em segurança por superfícies metálicas, podendo inclusive caminhar nas paredes e no teto." },
+          { nome: "Traje Tecnomágico (dois projetos)", descricao: "Custo total: 1.750z · Progresso: 17 · Defeito: sim. Armadura avançada de quatro patas com energia tecnomágica. O mestre a divide em dois projetos (armadura + canhão de fogo), ambos potência média, área individual, uso permanente. Defeito negociado: Vulnerabilidade a dano de raio." },
+          { nome: "Espinho Neutralizador (Maior · Pequena · Consumível)", descricao: "Custo: 600z · Progresso: 6 · Defeito: sim. Fincado no chão, impede todas as criaturas em cena — aliadas e inimigas — de lançar feitiços ou fazer rituais até o fim da cena ou até ser destruído." },
+          { nome: "Pó-de-pureza (Média · Pequena · Consumível)", descricao: "Custo: 400z · Progresso: 4 · Defeito: nenhum. Até o fim da cena, concede Resistência a dano de trevas e veneno a todos os aliados próximos." },
+          { nome: "Óleo Piromático (Média · Grande · Consumível)", descricao: "Custo: 600z · Progresso: 6 · Defeito: nenhum. Frasco de essência elemental ígnea. Ao ser quebrado, causa dano fraco de fogo a todas as criaturas em uma vasta área. Objetos inflamáveis pequenos também podem ser incendiados." },
+          { nome: "Gás do Sono (Maior · Pequena · Consumível)", descricao: "Custo: 800z · Progresso: 8 · Defeito: nenhum. Frasco alquímico que coloca todos em uma área para dormir por algumas horas. Os afetados podem ser acordados se feridos, estapeados ou sacudidos, mas não com barulhos altos." },
+          { nome: "Elmo de Submersão (Média · Individual · Permanente)", descricao: "Custo: 1.000z · Progresso: 10 · Defeito: nenhum. Máscara mágica que permite ao usuário respirar debaixo d'água." }
+        ]
       }
     ],
+    cor: "#4a6b1a",
     emoji: "⚙️"
   },
   {
@@ -853,8 +895,67 @@ const CLASSES = [
           { nome: "Módulos de Arma", descricao: "Enquanto pilotar com módulos de arma ativos, o piloto não tem acesso aos seus espaços de mão. Cada módulo de arma conta como uma arma de uma mão, não-marcial. Ao configurar, declare qual ocupará a mão dominante e qual a secundária. Alguns módulos são volumosos e impedem outros módulos de arma (incluindo Escudo) no mesmo veículo." },
           { nome: "Dano e Conserto", descricao: "O veículo pessoal é tratado como uma extensão do PJ e não tem atributos separados. Pode ser danificado como consequência narrativa da rendição do piloto, mas não pode ser destruído a menos que o jogador concorde. Consertar um veículo danificado custa (100 × NP do Piloto em Veículo Pessoal) zênites." }
         ]
+      },
+      {
+        titulo: "Estruturas",
+        itens: [
+          { nome: "Exoesqueleto", descricao: "Passageiros: nenhum. Distância: sem modificador. Pode ter até 2 módulos de arma, 1 módulo de armadura e qualquer número de módulos de suporte ativos. Se usar Compressão Tecnológica neste veículo pessoal, ignore o custo em PI." },
+          { nome: "Mecha", descricao: "Passageiros: nenhum. Distância: ×2. Pode ter até 2 módulos de arma, 1 módulo de armadura e qualquer número de módulos de suporte ativos." },
+          { nome: "Montaria", descricao: "Passageiros: até um. Distância: ×2. Pode ter até 1 módulo de arma, 1 módulo de armadura e qualquer número de módulos de suporte ativos. Se usar Coração no Motor com este veículo pessoal, ignore o custo em PM." }
+        ]
+      },
+      {
+        titulo: "Módulos de Armadura",
+        itens: [
+          { nome: "Cobertura Flexível", descricao: "Defesa: dado de DES +2. Def.M: dado de AST +1. Aplica-se apenas ao piloto que está pilotando." },
+          { nome: "Cobertura Pesada ✦", descricao: "Defesa: 12. Def.M: 8. Marcial. Aplica-se apenas ao piloto. Pode ser estendida aos passageiros através do módulo Cobertura Expandida." },
+          { nome: "Cobertura Rúnica ✦", descricao: "Defesa: 10. Def.M: 11. Marcial. Aplica-se apenas ao piloto. Pode ser estendida aos passageiros através do módulo Cobertura Expandida." },
+          { nome: "Cobertura Padrão ✦", descricao: "Defesa: 11. Def.M: 10. Marcial. Aplica-se apenas ao piloto. Pode ser estendida aos passageiros através do módulo Cobertura Expandida." }
+        ]
+      },
+      {
+        titulo: "Módulos de Arma",
+        itens: [
+          { nome: "Arcano", descricao: "Precisão: 【DES + VON】. Dano: 【RA + 8】 físico. Arcana · Corpo a corpo." },
+          { nome: "Machado", descricao: "Precisão: 【DES + AST】. Dano: 【RA + 12】 físico. Pesada · Corpo a corpo." },
+          { nome: "Lâmina", descricao: "Precisão: 【DES + AST】+1. Dano: 【RA + 6】 físico. Adaga · Corpo a corpo." },
+          { nome: "Arco", descricao: "Precisão: 【DES + AST】+1. Dano: 【RA + 12】 físico. Arco · À distância. Um veículo pessoal com este módulo ativo não pode ter outro módulo de arma ativo." },
+          { nome: "Canhão", descricao: "Precisão: 【DES + AST】. Dano: 【RA + 14】 físico. Arma de fogo · À distância. Um veículo pessoal com este módulo ativo não pode ter outro módulo de arma ativo." },
+          { nome: "Garra", descricao: "Precisão: 【DES + AST】. Dano: 【RA + 8】 físico. Luta · Corpo a corpo. Esta arma pode ser usada para interagir na cena como se fosse uma mão livre." },
+          { nome: "Claymore", descricao: "Precisão: 【DES + AST】+1. Dano: 【RA + 14】 físico. Luta · Corpo a corpo. Um veículo pessoal com este módulo ativo não pode ter outro módulo de arma ativo." },
+          { nome: "Esotérico", descricao: "Precisão: 【DES + VON】. Dano: 【RA + 12】 físico. Arcana · Corpo a corpo. Um veículo pessoal com este módulo ativo não pode ter outro módulo de arma ativo." },
+          { nome: "Malho", descricao: "Precisão: 【DES + AST】. Dano: 【RA + 10】 físico. Luta · Corpo a corpo." },
+          { nome: "Lança-chamas", descricao: "Precisão: 【DES + AST】. Dano: 【RA + 8】 fogo. Arma de fogo · Corpo a corpo." },
+          { nome: "Metralhadora", descricao: "Precisão: 【DES + AST】. Dano: 【RA + 10】 físico. Arma de fogo · Corpo a corpo. Um veículo pessoal com este módulo ativo não pode ter outro módulo de arma ativo. Ao usar a ação Ataque, você pode fazer dois ataques separados em vez de um (seguindo as regras de ataque com duas armas: sem propriedade multi, RA = 0 para o dano de cada ataque)." },
+          { nome: "Rifle", descricao: "Precisão: 【DES + AST】. Dano: 【RA + 10】 físico. Arma de fogo · À distância." },
+          { nome: "Foice", descricao: "Precisão: 【DES + AST】. Dano: 【RA + 16】 físico. Pesada · Corpo a corpo. Um veículo pessoal com este módulo ativo não pode ter outro módulo de arma ativo." },
+          { nome: "Escudo (Exoesqueleto e Mecha apenas)", descricao: "Enquanto dirigir este veículo pessoal, você ganha +2 na Def. e na Def.M. Este módulo não conta como arma, mas como escudo equipado. Não pode ser equipado na mão dominante a menos que você tenha Duplo Escudeiro. Se tiver, seus Escudos Gêmeos causam 2 pontos de dano adicional (cumulativo com dois módulos Escudo ativos)." },
+          { nome: "Lança", descricao: "Precisão: 【DES + AST】. Dano: 【RA + 10】 físico. Lança · Corpo a corpo." },
+          { nome: "Espada", descricao: "Precisão: 【DES + AST】+1. Dano: 【RA + 8】 físico. Espada · Corpo a corpo." },
+          { nome: "Tridente", descricao: "Precisão: 【DES + AST】+1. Dano: 【RA + 14】 físico. Lança · Corpo a corpo. Um veículo pessoal com este módulo ativo não pode ter outro módulo de arma ativo." }
+        ]
+      },
+      {
+        titulo: "Módulos de Suporte",
+        itens: [
+          { nome: "Aéreo (conta como 2 módulos)", descricao: "Este veículo pessoal pode voar e sua distância se torna ×3. Seus ataques corpo a corpo podem atingir criaturas voadoras e nenhuma criatura a bordo pode ser atingida por ataques corpo a corpo (a menos que o atacante seja voador). Os benefícios cessam se o veículo estiver em terra, você estiver em crise, ou uma criatura a bordo sofrer dano de ar, raio ou gelo (até o início do seu próximo turno)." },
+          { nome: "Antielemento", descricao: "Toda vez que você ativar este módulo, escolha um tipo de dano: ar, fogo, gelo, raio ou terra. Criaturas a bordo são Resistentes ao dano escolhido enquanto o módulo permanecer ativo." },
+          { nome: "Assento (Mecha e Montaria apenas)", descricao: "Este veículo pessoal pode transportar um passageiro extra de tamanho humano." },
+          { nome: "Cobertura Expandida (Mecha e Montaria apenas)", descricao: "Enquanto pilotar com um módulo de Cobertura Pesada, Rúnica ou Padrão ativo, todos os passageiros a bordo podem considerar sua Defesa e Defesa Mágica como igual às concedidas pelo módulo de armadura (eles ainda podem usar os valores normais se forem melhores)." },
+          { nome: "Contragolpe", descricao: "Se estiver pilotando após uma criatura a bordo ser atingida por um ataque à distância, você pode gastar 1 PI para causar 10 pontos de dano físico ao atacante (após o ataque dele ser resolvido). No 20°+ nível, este dano aumenta em 5; no 40°+ nível, aumenta em 10." },
+          { nome: "Escavação", descricao: "Este veículo pessoal está equipado com luzes potentes e pode escavar o solo." },
+          { nome: "Interface Rápida", descricao: "Quando entra nesse veículo pessoal em seu turno durante um conflito, você pode executar uma ação adicional." },
+          { nome: "Magistático", descricao: "Após pagar o custo em PM de um arcano, feitiço ou verso, se estiver dirigindo esse veículo pessoal e tiver uma arma arcana equipada, você recupera 5 PM, ou 10 PM se o custo for igual ou maior que 30 PM." },
+          { nome: "Mira Avançada", descricao: "Enquanto pilotar este veículo pessoal, você recebe +2 em testes de Precisão e testes de Magia para feitiços ofensivos que você lançar." },
+          { nome: "Navegante", descricao: "Esse veículo pessoal pode viajar na água e debaixo dela." },
+          { nome: "Ofensiva Secundária (Exoesqueleto e Mecha apenas)", descricao: "Sempre que você ativar este módulo, escolha um módulo de arma inativo. Enquanto o módulo escolhido estiver inativo e este módulo estiver ativo, você pode usar uma ação para fazer um ataque livre com o módulo de arma escolhido." },
+          { nome: "Poder (Exoesqueleto e Mecha apenas)", descricao: "Enquanto pilotar este veículo pessoal, você recebe +2 em todos os testes opostos baseados em força bruta ou resistência física." },
+          { nome: "Sensor", descricao: "Enquanto pilotar este veículo pessoal, você recebe +2 nos testes abertos feitos para examinar criaturas, itens e locais próximos." },
+          { nome: "Turbo", descricao: "Enquanto pilotar este veículo pessoal, você recebe +2 em todos os testes opostos baseados em velocidade e manobras rápidas." }
+        ]
       }
     ],
+    cor: "#1a3a6b",
     emoji: "🚀"
   },
   {
