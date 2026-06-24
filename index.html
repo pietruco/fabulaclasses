@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fábula Ultima — Livro de Classes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-mark">⚔</div>
+      <h1 class="site-title">Fábula Ultima</h1>
+      <p class="site-subtitle">Livro de Classes</p>
+    </div>
+
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Buscar classe ou poder..." autocomplete="off">
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <nav id="classNav">
+      <!-- populated by JS -->
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>Fábula Ultima RPG</span>
+    </div>
+  </aside>
+
+  <!-- MOBILE TOGGLE -->
+  <button id="sidebarToggle" aria-label="Abrir menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- MAIN CONTENT -->
+  <main id="main">
+
+    <!-- HOME -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="hero-emblem">⚔</div>
+        <h2 class="hero-title">Livro de Classes</h2>
+        <p class="hero-sub">Fábula Ultima RPG</p>
+        <p class="hero-desc">Escolha sua classe e embarque na aventura. Este livro traz <strong id="classCount"></strong> classes jogáveis com seus poderes, benefícios e histórias. Clique em qualquer classe ao lado ou use a busca para começar.</p>
+        <div class="hero-grid" id="heroGrid">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CLASS DETAIL (template) -->
+    <section id="classDetail" class="page">
+      <!-- populated by JS -->
+    </section>
+
+  </main>
+
+  <!-- OVERLAY for mobile -->
+  <div id="overlay"></div>
+
+  <script src="classes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
