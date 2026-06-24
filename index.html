@@ -12,58 +12,58 @@
 
   <!-- SIDEBAR -->
   <aside id="sidebar">
-    <div class="sidebar-header">
+    <div class="sidebar-header" onclick="showHome()" style="cursor:pointer">
       <div class="logo-mark">⚔</div>
       <h1 class="site-title">Fábula Ultima</h1>
       <p class="site-subtitle">Livro de Classes</p>
     </div>
 
     <div class="search-wrap">
-      <input type="text" id="searchInput" placeholder="Buscar classe ou poder..." autocomplete="off">
+      <input type="text" id="searchInput" placeholder="Buscar classe, poder, feitiço..." autocomplete="off">
       <span class="search-icon">🔍</span>
     </div>
 
-    <nav id="classNav">
-      <!-- populated by JS -->
-    </nav>
-
-    <div class="sidebar-footer">
-      <span>Fábula Ultima RPG</span>
+    <!-- FILTER PILLS -->
+    <div class="filter-bar">
+      <button class="filter-pill active" data-filter="all">Todas</button>
+      <button class="filter-pill" data-filter="combate">Combate</button>
+      <button class="filter-pill" data-filter="magia">Magia</button>
+      <button class="filter-pill" data-filter="suporte">Suporte</button>
+      <button class="filter-pill" data-filter="utilidade">Utilidade</button>
     </div>
+
+    <nav id="classNav"></nav>
+
+    <!-- EXTRA SECTIONS NAV -->
+    <div class="nav-section-header">Referências</div>
+    <div class="extra-nav">
+      <div class="nav-item" onclick="showSection('dancas')"><span class="nav-emoji">💃</span><span class="nav-label">Danças</span></div>
+      <div class="nav-item" onclick="showSection('feiticos')"><span class="nav-emoji">✨</span><span class="nav-label">Feitiços</span></div>
+      <div class="nav-item" onclick="showSection('magissementes')"><span class="nav-emoji">🌸</span><span class="nav-label">Magissementes</span></div>
+      <div class="nav-item" onclick="showSection('terioformas')"><span class="nav-emoji">🧬</span><span class="nav-label">Terioformas</span></div>
+      <div class="nav-item" onclick="showSection('simbolos')"><span class="nav-emoji">🎨</span><span class="nav-label">Símbolos</span></div>
+      <div class="nav-item" onclick="showSection('versos')"><span class="nav-emoji">🎵</span><span class="nav-label">Versos</span></div>
+      <div class="nav-item" onclick="showSection('invocacoes')"><span class="nav-emoji">🌊</span><span class="nav-label">Invocações</span></div>
+      <div class="nav-item" onclick="showSection('infusoes')"><span class="nav-emoji">⚒️</span><span class="nav-label">Infusões</span></div>
+    </div>
+
+    <div class="sidebar-footer">Fábula Ultima RPG</div>
   </aside>
 
-  <!-- MOBILE TOGGLE -->
   <button id="sidebarToggle" aria-label="Abrir menu">
     <span></span><span></span><span></span>
   </button>
 
-  <!-- MAIN CONTENT -->
   <main id="main">
-
-    <!-- HOME -->
-    <section id="home" class="page active">
-      <div class="hero">
-        <div class="hero-emblem">⚔</div>
-        <h2 class="hero-title">Livro de Classes</h2>
-        <p class="hero-sub">Fábula Ultima RPG</p>
-        <p class="hero-desc">Escolha sua classe e embarque na aventura. Este livro traz <strong id="classCount"></strong> classes jogáveis com seus poderes, benefícios e histórias. Clique em qualquer classe ao lado ou use a busca para começar.</p>
-        <div class="hero-grid" id="heroGrid">
-          <!-- populated by JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- CLASS DETAIL (template) -->
-    <section id="classDetail" class="page">
-      <!-- populated by JS -->
-    </section>
-
+    <section id="home" class="page active"></section>
+    <section id="classDetail" class="page"></section>
+    <section id="sectionDetail" class="page"></section>
   </main>
 
-  <!-- OVERLAY for mobile -->
   <div id="overlay"></div>
 
   <script src="classes.js"></script>
+  <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
