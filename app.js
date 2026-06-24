@@ -309,11 +309,13 @@ function renderPoderesHeroicos(filtroClasse) {
 
   if (filtroClasse) {
     // Inline dentro da página de classe
-    if (!filtrados.length) return '';
+    const todos = PODERES_HEROICOS.filter(p => p.todosPersonagens);
+    if (!filtrados.length && !todos.length) return '';
     return `
       <div class="ph-inline-section">
         <p class="section-label">Poderes Heroicos Disponíveis</p>
         <div class="ph-inline-grid">
+          ${todos.map(renderCard).join('')}
           ${filtrados.map(renderCard).join('')}
         </div>
       </div>`;
